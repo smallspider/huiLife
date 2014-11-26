@@ -1,25 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <artifactId>huilife-web</artifactId>
-  <packaging>war</packaging>
-  <name>huilife-web</name>
-  <url>http://maven.apache.org</url>
-  <parent>
-  	<groupId>com.huilife</groupId>
-  	<artifactId>huilife-root</artifactId>
-  	<version>${huilife.version}</version>
-  	<relativePath>../..</relativePath>
-  </parent>
+	<artifactId>huilife-web</artifactId>
+	<packaging>war</packaging>
+	<name>huilife-web</name>
+	<url>http://maven.apache.org</url>
+	<parent>
+		<groupId>com.huilife</groupId>
+		<artifactId>huilife-root</artifactId>
+		<version>${huilife.version}</version>
+		<relativePath>../..</relativePath>
+	</parent>
+	<build>
+		<plugins>
+			<!-- 合并多个war -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+					<overlays>
+						<overlay>
+							<groupId>com.huilife</groupId>
+							<artifactId>huilife-web-manage</artifactId>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.huilife</groupId>
+			<artifactId>huilife-web-manage</artifactId>
+			<version>${huilife.version}</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
 </project>
