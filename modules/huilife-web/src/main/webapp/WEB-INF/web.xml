@@ -3,6 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
+	<display-name>huilife</display-name>
 	<!-- Spring配置 -->
 	<!-- ====================================== -->
 	<listener>
@@ -18,10 +19,10 @@
 	<servlet>
 		<servlet-name>huilife-web</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		 <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:config/huilife-web-servlet.xml</param-value>
-    </init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:config/huilife-web-servlet.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -29,6 +30,10 @@
 		<servlet-name>huilife-web</servlet-name>
 		<url-pattern>/web/*</url-pattern>
 	</servlet-mapping>
+	<!-- session会话超时配置 -->
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
