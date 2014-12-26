@@ -1,0 +1,167 @@
+<div class="inbox-nav-bar no-content-padding">
+
+	<input id="upLoad" type="button" value="上传">
+	<div class="btn-group hidden-desktop visible-tablet">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Inbox <i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-menu pull-left">
+			<li><a href="javascript:void(0);" class="inbox-load">Inbox <i
+					class="fa fa-check"></i></a></li>
+			<li><a href="javascript:void(0);">Sent</a></li>
+			<li><a href="javascript:void(0);">Trash</a></li>
+			<li class="divider"></li>
+			<li><a href="javascript:void(0);">Spam</a></li>
+		</ul>
+
+	</div>
+
+	<div id="uploadDialog" class="b-panel b-dialog upload-dialog"
+		style="display: block;">
+		<div class="dlg-hd b-rlv dlg-hd-upload sprite-new bdr-n-blu-1">
+			<div class="inline-mask" id="uploadHeadlineProgress"
+				style="width: 0px;"></div>
+			<a hidefocus="true" unselectable="on"
+				class="dlg-sys-btn dlg-sys-btn-cls b-fr" id="uploadDialogCloseTop"
+				href="javascript:void(0);" title="关闭"><dfn class="sprite-new">关闭</dfn></a><a
+				hidefocus="true" unselectable="on"
+				class="dlg-sys-btn dlg-sys-btn-min b-fr"
+				id="uploadDialogCloseMinimumTop" href="javascript:void(0);"
+				title="最小化"><dfn class="sprite-new">最大化</dfn></a>
+			<h4 class="dlg-h4-1 clearfix" id="uploadDialogHeadline">
+				<strong class="b-fl" id="uploadDialogHeadlineStrong"><b
+					class="upload-bar-info ellipsis" style="margin: 0 0 0 20px">正在上传：1/1</b></strong>
+			</h4>
+		</div>
+		<div class="dlg-bd upload-dialog-hd b-rlv bdr-n-blu"
+			id="uploadDialogBody" style="height: 375px;">
+			<div class="clearfix file-item upload-file-item upload-colgroup"
+				id="uploadDialogColgroup">
+				<div class="b-fl pf-c1 ellipsis">
+					<span class="idt-10">标题</span>
+				</div>
+				<div class="b-fl pf-c2 size-cell">大小</div>
+				<div class="b-fl pf-c5">上传目录</div>
+				<div class="b-fl pf-c3">状态</div>
+				<div class="b-fl pf-c4">操作</div>
+			</div>
+			<div class="upload-exception-msg bdr-n-cau"
+				id="uploadExceptionMsgContainer" style="top: 0px;">
+				<div class="upload-exception-msg-inner clearfix">
+					<a id="uploadExceptionRetry"
+						class="upload-exception-msg-cmd b-fr sprite-new b-split-btn b-split-btn-1"
+						href="javascript:void(0);"><span class="sprite-new"><em
+							class="sprite-new" style="display: none">重传失败文件</em></span></a>
+					<p id="uploadExceptionMsg">
+						<dfn class="b-in-blk ic-upload-caution"></dfn>
+						<i class="up-dd-tip"></i>
+						<dfn class="txt1 tips-prx ellipsis">你上传的文件较大，建议安装极速上传控件，支持断点续传。</dfn>
+						<a target="_blank" class="two-pix-btn"
+							href="http://bs.baidu.com/netdisk/UploadPlugin_2.0.0.3.exe">下载安装</a>
+					</p>
+				</div>
+			</div>
+			<div class="dialog-content clearfix">
+				<div class="uploading-files upload-dialog-col"
+					id="uploadFileListContainer">
+					<dl id="_disk_id_21" class="infinite-listview"
+						style="margin-top: 0px;">
+						<dd class="clearfix file-item upload-file-item" _position="0"
+							_dir="0" _fail="0">
+							<div class="inline-mask" style="width: 13%;"></div>
+							<div class="b-fl overlay-col pf-c1 ellipsis"
+								title="CDL0.9.7.1.iso">
+								<span class="sprite-ic ico global-icon-16 global-icon-16-iso"></span>CDL0.9.7.1.iso
+							</div>
+							<div class="b-fl overlay-col pf-c2 size-cell">
+								<em>134.2M</em>
+							</div>
+							<div class="b-fl overlay-col pf-c5 ellipsis">
+								<a hidefocus="true" class="b-no-ln" href="javascript:void(0);"
+									title="我的文件">我的文件</a>
+							</div>
+							<div class="b-fl overlay-col pf-c3 ellipsis clearfix">
+								<dfn class="prog-v">13%(109.70 KB/s)</dfn>
+							</div>
+							<div class="b-fl overlay-col pf-c4">
+								<a hidefocus="true"
+									class="b-in-blk sprite-new status-btn status-btn-waiting"
+									href="javascript:void(0);" _installed="1" title="取消"
+									style="display: block;"></a><a hidefocus="true"
+									class="b-in-blk sprite-new status-btn mf-state-btn"
+									href="javascript:void(0);"></a>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div style="right: -1px; display: none;" class="scrollbar"
+					unselectable="on" id="_disk_id_16">
+					<div id="_disk_id_17"
+						class="scrollbar-arrow scrollbar-arrow-up sprite"
+						unselectable="on" dir="up"></div>
+					<div style="height: 314px" class="scrollbar-tracker"
+						unselectable="on" id="_disk_id_19">
+						<div class="scrollbar-thumb" unselectable="on" id="_disk_id_20"
+							style="height: 2601.90243902439px; top: 0px;"></div>
+					</div>
+					<div id="_disk_id_18"
+						class="scrollbar-arrow scrollbar-arrow-down sprite"
+						unselectable="on" dir="down"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		pageSetUp();
+		var pagefunction = function() {
+			/**
+			 * 配置文件（如果没有默认字样，说明默认值就是注释下的值）
+			 * 但是，on*（onSelect， onMaxSizeExceed...）等函数的默认行为
+			 * 是在ID为i_stream_message_container的页面元素中写日志
+			 */
+			var config = {
+				browseFileId : "i_select_files",
+				/** 选择文件的ID, 默认: i_select_files */
+				browseFileBtn : "<div>请选择文件</div>",
+				/** 显示选择文件的样式, 默认: `<div>请选择文件</div>` */
+				dragAndDropArea : "i_select_files",
+				/** 拖拽上传区域，Id（字符类型"i_select_files"）或者DOM对象, 默认: `i_select_files` */
+				dragAndDropTips : "<span>把文件(文件夹)拖拽到这里</span>",
+				/** 拖拽提示, 默认: `<span>把文件(文件夹)拖拽到这里</span>` */
+				filesQueueId : "i_stream_files_queue",
+				/** 文件上传容器的ID, 默认: i_stream_files_queue */
+				filesQueueHeight : 200,
+				/** 文件上传容器的高度（px）, 默认: 450 */
+				messagerId : "i_stream_message_container",
+				/** 消息显示容器的ID, 默认: i_stream_message_container */
+				multipleFiles : true
+			/** 多个文件一起上传, 默认: false */
+			//				autoUploading: false, /** 选择文件后是否自动上传, 默认: true */
+			//				autoRemoveCompleted : true, /** 是否自动删除容器中已上传完毕的文件, 默认: false */
+			//				maxSize: 104857600//, /** 单个文件的最大大小，默认:2G */
+			//				retryCount : 5, /** HTML5上传失败的重试次数 */
+			//				postVarsPerFile : { /** 上传文件时传入的参数，默认: {} */
+			//					param1: "val1",
+			//					param2: "val2"
+			//				},
+			//				swfURL : "/swf/FlashUploader.swf", /** SWF文件的位置 */
+			//				tokenURL : "/tk", /** 根据文件名、大小等信息获取Token的URI（用于生成断点续传、跨域的令牌） */
+			//				frmUploadURL : "/fd;", /** Flash上传的URI */
+			//				uploadURL : "/upload", /** HTML5上传的URI */
+			//				simLimit: 200, /** 单次最大上传文件个数 */
+			//				extFilters: [".txt", ".rpm", ".rmvb", ".gz", ".rar", ".zip", ".avi", ".mkv", ".mp3"], /** 允许的文件扩展名, 默认: [] */
+			//				onSelect: function(list) {alert('onSelect')}, /** 选择文件后的响应事件 */
+			//				onMaxSizeExceed: function(size, limited, name) {alert('onMaxSizeExceed')}, /** 文件大小超出的响应事件 */
+			//				onFileCountExceed: function(selected, limit) {alert('onFileCountExceed')}, /** 文件数量超出的响应事件 */
+			//				onExtNameMismatch: function(name, filters) {alert('onExtNameMismatch')}, /** 文件的扩展名不匹配的响应事件 */
+			//				onCancel : function(file) {alert('Canceled:  ' + file.name)}, /** 取消上传文件的响应事件 */
+			//				onComplete: function(file) {alert('onComplete')}, /** 单个文件上传完毕的响应事件 */
+			//				onQueueComplete: function() {alert('onQueueComplete')}, /** 所以文件上传完毕的响应事件 */
+			//				onUploadError: function(status, msg) {alert('onUploadError')} /** 文件上传出错的响应事件 */
+			//				onDestroy: function() {alert('onDestroy')} /** 文件上传出错的响应事件 */
+			};
+			var _t = new Stream(config);
+		};
+		//加载上传组件
+		loadScript("js/stream-v1.js", pagefunction);
+	</script>

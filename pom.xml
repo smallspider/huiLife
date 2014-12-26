@@ -58,6 +58,8 @@
   <modules>
   	<module>modules/huilife-web</module>
   	<module>modules/huilife-web-manage</module>
+  	<module>modules/huilife-httpUploader</module>
+  	<module>modules/landisk</module>
   </modules>
   <dependencyManagement>
   	<dependencies>
