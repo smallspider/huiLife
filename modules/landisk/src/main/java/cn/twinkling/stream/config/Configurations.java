@@ -21,7 +21,7 @@ public class Configurations {
 	}
 	
 	static {
-		
+		 
 		new Configurations();
 	}
 
