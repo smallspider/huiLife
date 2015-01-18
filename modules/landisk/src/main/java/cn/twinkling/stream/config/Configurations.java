@@ -15,6 +15,10 @@ public class Configurations {
 			"java.io.tmpdir", File.separator + "tmp" + File.separator
 					+ "upload-repository");
 
+	public static void main(String[] args) {
+		System.out.println(REPOSITORY);
+	}
+	
 	static {
 		new Configurations();
 	}

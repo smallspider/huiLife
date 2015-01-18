@@ -73,7 +73,7 @@
 				//dragAndDropTips: "<span>把文件(文件夹)拖拽到这里</span>", /** 拖拽提示, 默认: `<span>把文件(文件夹)拖拽到这里</span>` */
 				filesQueueId : "dialog_simple", /** 文件上传容器的ID, 默认: i_stream_files_queue */
 				filesQueueHeight : 200, /** 文件上传容器的高度（px）, 默认: 450 */
-				//messagerId : "i_stream_message_container", /** 消息显示容器的ID, 默认: i_stream_message_container */
+				messagerId : "i_stream_message_container", /** 消息显示容器的ID, 默认: i_stream_message_container */
 				multipleFiles: true /** 多个文件一起上传, 默认: false */
 //				autoUploading: false, /** 选择文件后是否自动上传, 默认: true */
 //				autoRemoveCompleted : true, /** 是否自动删除容器中已上传完毕的文件, 默认: false */

@@ -38,51 +38,6 @@
 			<version>1.2.2</version>
 		</dependency>
 	</dependencies>
-	<build>
-		<finalName>landisk</finalName>
-		<plugins>
-			<!-- when install war, it will install jar -->
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<executions>
-					<execution>
-						<id>stream-jar-id</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<classifier>r</classifier>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin> -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
-				<version>2.2</version> <configuration> <path>/</path> <port>8080</port> <uriEncoding>UTF-8</uriEncoding> 
-				<server>tomcat7</server> </configuration> </plugin> -->
-		</plugins>
-		<outputDirectory>target/classes</outputDirectory>
-	</build>
 	<packaging>war</packaging>
 	<name>landisk</name>
 </project>
