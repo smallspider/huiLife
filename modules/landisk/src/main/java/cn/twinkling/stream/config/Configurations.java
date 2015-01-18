@@ -17,6 +17,7 @@ public class Configurations {
 
 	public static void main(String[] args) {
 		System.out.println(REPOSITORY);
+		
 	}
 	
 	static {
